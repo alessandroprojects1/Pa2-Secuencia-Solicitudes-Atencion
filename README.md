@@ -17,9 +17,12 @@
 ------------------------------------------------------------------------------------------
 ## ACTIVIDAD 1 - Fundamentos y representación de listas enlazadas 
 
+
 ## ACTIVIDAD 2 - Recorrido e inserción 
 
+
 ## ACTIVIDAD 3 - Lista enlazada simple: búsqueda, modificación y eliminación 
+
 
 ## ACTIVIDAD 4 - Listas dobles y circulares
 
