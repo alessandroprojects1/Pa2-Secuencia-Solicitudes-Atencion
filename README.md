@@ -15,10 +15,8 @@
 | Alessandro Ismael Gallo Quiroz | [Desarrollador Backend Principal] | [Modelado, desarrollo de algoritmos vectoriales y lógica de ordenamiento de la Actividad 2] |
 
 ------------------------------------------------------------------------------------------
-## ACTIVIDAD 1 - Fundamentos y representación de listas enlazadas 
-### Problema del caso 
-sijsjdfsdfsdfsdfafasd
 
+## ACTIVIDAD 1 - Fundamentos y representación de listas enlazadas 
 
 ## ACTIVIDAD 2 - Recorrido e inserción 
 
