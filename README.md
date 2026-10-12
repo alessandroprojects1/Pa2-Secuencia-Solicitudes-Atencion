@@ -226,10 +226,8 @@ cabeza → [100 | Sofía | Pendiente] → [101 | Ana | Pendiente] → [102 | Lui
 | **Inserción al Final** | **Expansión posterior** (+1 nodo) | 1. Se recorre hasta el último nodo (`actual.siguiente == null`).<br>2. El último nodo apunta al nuevo (`actual.siguiente = nuevo`).<br>3. El nuevo apunta a `null`. | $O(n)$ |
 | **Inserción Después de un Nodo Dado** | **Intercalación intermedia** (+1 nodo) | 1. Se busca el nodo de referencia `actual`.<br>2. `nuevo.siguiente = actual.siguiente`.<br>3. `actual.siguiente = nuevo`. | $O(n)$ |
 
---- 
 
-
-## ACTIVIDAD 3 - Lista enlazada simple: búsqueda, modificación y eliminación 
+---------------------------------------------------------------------------------------------------------------------------------
 ## ACTIVIDAD 3 - Lista enlazada simple: búsqueda, modificación y eliminación 
   ### 1. Problema
    
