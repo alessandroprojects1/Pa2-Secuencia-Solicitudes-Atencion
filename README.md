@@ -230,6 +230,110 @@ cabeza → [100 | Sofía | Pendiente] → [101 | Ana | Pendiente] → [102 | Lui
 
 
 ## ACTIVIDAD 3 - Lista enlazada simple: búsqueda, modificación y eliminación 
+## ACTIVIDAD 3 - Lista enlazada simple: búsqueda, modificación y eliminación 
+  ### 1. Problema
+   
+  Una organización gestiona una secuencia dinámica de solicitudes de atención. Constantemente ingresan casos nuevos, se eliminan otros y algunos deben reubicarse. Cada solicitud se representa como un nodo con los siguientes datos:
+   
+  - **codigo:** número entero único que identifica el caso.
+  - **solicitante:** nombre de la persona que hizo la solicitud.
+  - **estado:** situación del caso (Pendiente, En atención o Resuelto).
+  - **siguiente:** enlace al siguiente nodo de la lista.
+  La lista de trabajo del equipo tiene siempre estos 5 casos:
+   
+  `cabeza -> [101 | Ana | Pendiente] -> [102 | Luis | En atención] -> [103 | Rosa | Pendiente] -> [104 | Carlos | Pendiente] -> [105 | Marta | Resuelto] -> null`
+   
+  El problema consiste en poder **localizar** una solicitud concreta, **actualizar** su estado y **retirarla** de la lista cuando corresponda, sin perder el orden ni los enlaces de los demás casos.
+   
+  ### 2. Objetivo
+   
+  Diseñar y desarrollar, sobre una lista enlazada simple, los algoritmos de búsqueda, modificación y eliminación de un nodo, explicar cómo se reajustan los enlaces al eliminar, y comparar la eficiencia básica de insertar y eliminar según el punto de intervención (inicio, medio o final).
+   
+  ### 3. Solución desarrollada
+   
+  #### 3.1 Algoritmo de búsqueda
+   
+  **Criterio definido por el equipo:** el código del caso. Se eligió porque es único, así que la búsqueda nunca devuelve más de un nodo ni genera ambigüedad (buscar por nombre podría coincidir con varios casos).
+   
+  **Pasos:**
+  1. Se coloca una referencia auxiliar en el primer nodo de la lista (la cabeza).
+  2. Mientras la referencia no sea nula, se compara el código del nodo actual con el código buscado.
+  3. Si coinciden, se devuelve ese nodo y termina la búsqueda.
+  4. Si no coinciden, la referencia avanza al nodo siguiente.
+  5. Si se llega al final de la lista (referencia nula) sin coincidencias, se informa que el caso no existe.
+  **Ejemplo:** al buscar el código 103, se revisan en orden el 101, el 102 y el 103, donde se encuentra la coincidencia. Al buscar el 999, se recorre toda la lista y se informa que no existe.
+   
+  #### 3.2 Algoritmo de modificación
+   
+  **Pasos:**
+  1. Se usa el algoritmo de búsqueda para localizar el nodo con el código indicado.
+  2. Si el nodo no existe, la operación termina informando que no se pudo modificar.
+  3. Si existe, se reemplaza el valor del campo estado por el nuevo estado.
+  4. Los enlaces no se tocan: el nodo conserva su posición y su código.
+  **Ejemplo:** se modifica el caso 102, que pasa de "En atención" a "Resuelto".
+   
+  `cabeza -> [101 | Ana | Pendiente] -> [102 | Luis | Resuelto] -> [103 | Rosa | Pendiente] -> [104 | Carlos | Pendiente] -> [105 | Marta | Resuelto] -> null`
+   
+  #### 3.3 Algoritmo de eliminación y reajuste de enlaces
+   
+  **Pasos:**
+  1. Si la lista está vacía, no hay nada que eliminar.
+  2. Si el nodo a eliminar es el primero, la cabeza pasa a apuntar al segundo nodo.
+  3. Si no es el primero, se recorre la lista manteniendo dos referencias: la del nodo actual y la del nodo anterior a él.
+  4. Cuando el código del nodo actual coincide con el buscado, el enlace "siguiente" del nodo anterior se redirige al nodo que sigue al actual. De esta forma el nodo eliminado queda "saltado".
+  5. El nodo eliminado ya no tiene ninguna referencia que lo alcance, por lo que Java lo libera automáticamente.
+  6. Si se llega al final sin encontrar el código, se informa que el caso no existe.
+  **Cómo se reajustan los enlaces:**
+   
+  - **Eliminar un nodo del medio (caso 103):** el nodo 102 deja de apuntar al 103 y pasa a apuntar al 104.
+    - Antes: `[101] -> [102] -> [103] -> [104] -> [105] -> null`
+    - Después: `[101] -> [102] -> [104] -> [105] -> null`
+  - **Eliminar el último nodo (caso 105):** el nodo anterior (104) pasa a apuntar a `null`, por lo que se convierte en el nuevo último.
+    - Antes: `[101] -> [102] -> [104] -> [105] -> null`
+    - Después: `[101] -> [102] -> [104] -> null`
+  - **Eliminar el primer nodo (caso 101):** no hay nodo anterior; la cabeza avanza al segundo nodo.
+  #### 3.4 Comparación de eficiencia: inserción y eliminación según el punto de intervención
+   
+  La lista simple solo conoce el primer nodo (la cabeza) y cada nodo solo sabe cuál es el siguiente. Para llegar a cualquier otro punto hay que recorrer la lista desde el inicio, por eso la eficiencia depende de dónde se haga el cambio.
+   
+  - **Al inicio:** es la operación más eficiente. Solo se modifica la cabeza: al insertar, el nuevo nodo apunta a la antigua cabeza; al eliminar, la cabeza pasa al segundo nodo. Son siempre los mismos pasos, sin importar cuántos casos haya.
+  - **En el medio:** primero hay que recorrer la lista hasta encontrar el nodo de referencia (y su anterior, al eliminar). Ese recorrido es lo que más cuesta. Una vez ubicado, reajustar los enlaces es rápido: basta cambiar uno o dos enlaces.
+  - **Al final:** es menos eficiente, porque la lista no sabe dónde termina y hay que recorrerla completa hasta el último nodo. Para eliminar el último, además se necesita llegar al penúltimo y hacer que apunte a `null`.
+  | Operación | Inicio | Medio | Final |
+  |---|---|---|---|
+  | Inserción | Muy eficiente | Requiere recorrido previo | Requiere recorrer toda la lista |
+  | Eliminación | Muy eficiente | Requiere recorrido previo | Requiere recorrer toda la lista |
+   
+  **Ejemplo con la lista del caso:** eliminar el 101 toma 1 paso, mientras que eliminar el 105 obliga a pasar por los nodos 101, 102, 103 y 104.
+   
+  **Conclusión aplicada al caso:** atender o retirar la solicitud más antigua (al inicio) es rápido, pero registrar o cerrar casos al final se vuelve más lento a medida que crece la lista. Esta es una limitación de la lista simple que las listas dobles ayudan a resolver (Actividad 4).
+
+  
+### 4. Comparación de eficiencia en una lista enlazada simple
+La eficiencia de insertar y eliminar depende de dónde se hace el cambio, porque la lista simple solo conoce el primer nodo (`cabeza`) y cada nodo solo sabe cuál es el siguiente. Para llegar a cualquier otro punto hay que recorrer la lista desde el inicio.
+ 
+#### Al inicio
+ 
+Es la operación más eficiente. Solo se modifica la `cabeza`: al insertar, el nuevo nodo apunta a la antigua cabeza; al eliminar, la cabeza pasa al segundo nodo. Son siempre los mismos pasos, sin importar cuántos casos haya en la lista.
+ 
+#### En el medio
+ 
+Primero hay que recorrer la lista hasta encontrar el nodo de referencia (y su anterior, en el caso de eliminar). Ese recorrido es lo que más cuesta. Una vez ubicado, reajustar los enlaces es rápido: basta cambiar uno o dos punteros. Por ejemplo, para eliminar el caso 103 se recorre hasta el 102 y se hace que apunte al 104.
+ 
+#### Al final
+ 
+Es menos eficiente, porque la lista no sabe dónde termina y hay que recorrerla completa hasta el último nodo. Para eliminar el último se necesita además llegar al penúltimo y hacer que apunte a `null`.
+ 
+#### Resumen
+ 
+| Operación | Inicio | Medio | Final |
+|---|---|---|---|
+| Inserción | Muy eficiente | Requiere recorrido previo | Requiere recorrer toda la lista |
+| Eliminación | Muy eficiente | Requiere recorrido previo | Requiere recorrer toda la lista |
+ 
+#### Conclusión aplicada al caso
+ 
+Atender o retirar la solicitud más antigua (al inicio) es rápido, pero registrar o cerrar casos al final se vuelve más lento a medida que crece la lista. Esto muestra una limitación de la lista simple, que las listas dobles ayudan a resolver en la Actividad 4.
 
 
 ## ACTIVIDAD 4 - Listas dobles y circulares
