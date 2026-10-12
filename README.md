@@ -333,6 +333,6 @@ Es menos eficiente, porque la lista no sabe dónde termina y hay que recorrerla 
  
 Atender o retirar la solicitud más antigua (al inicio) es rápido, pero registrar o cerrar casos al final se vuelve más lento a medida que crece la lista. Esto muestra una limitación de la lista simple, que las listas dobles ayudan a resolver en la Actividad 4.
 
-
+----------------------------------------------------------------------------------
 ## ACTIVIDAD 4 - Listas dobles y circulares
 
