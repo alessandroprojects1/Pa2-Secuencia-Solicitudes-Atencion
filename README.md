@@ -16,6 +16,8 @@
 
 ------------------------------------------------------------------------------------------
 ## ACTIVIDAD 1 - Fundamentos y representación de listas enlazadas 
+### Problema del caso 
+sijsjdfsdfsdfsdfafasd
 
 
 ## ACTIVIDAD 2 - Recorrido e inserción 
