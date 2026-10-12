@@ -18,11 +18,6 @@
 
 ## ACTIVIDAD 1 - Fundamentos y representación de listas enlazadas 
 
-### 1. Problema
- La IA ha revolucionado .....
- 
-### 2. Obejtivo
-### 3. Solución desarrollada
 
 
 ## ACTIVIDAD 2 - Recorrido e inserción 
