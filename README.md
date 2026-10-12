@@ -17,6 +17,12 @@
 ------------------------------------------------------------------------------------------
 
 ## ACTIVIDAD 1 - Fundamentos y representación de listas enlazadas 
+### 1. Problema
+ La IA es una tecnología que ha revolucinado .....
+ ### 2. Obejtivo
+ sdfdsfsdf
+ ### 3. Solución desarrollada
+ hgjfhkfg
 
 ## ACTIVIDAD 2 - Recorrido e inserción 
 
