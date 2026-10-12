@@ -2,7 +2,7 @@
 
 > **Curso:** Algoritmo y Estructura de Datos Basados en Inteligencia Artificial
 > **Código:** 30710 
-> **Evaluación:** [PA2]
+> **Evaluación:** PA2
 
 ## Integrantes: 
 
@@ -15,5 +15,11 @@
 | Alessandro Ismael Gallo Quiroz | [Desarrollador Backend Principal] | [Modelado, desarrollo de algoritmos vectoriales y lógica de ordenamiento de la Actividad 2] |
 
 ------------------------------------------------------------------------------------------
+## ACTIVIDAD 1 - Fundamentos y representación de listas enlazadas 
 
+## ACTIVIDAD 2 - Recorrido e inserción 
+
+## ACTIVIDAD 3 - Lista enlazada simple: búsqueda, modificación y eliminación 
+
+## ACTIVIDAD 4 - Listas dobles y circulares
 
