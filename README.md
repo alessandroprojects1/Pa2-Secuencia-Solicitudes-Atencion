@@ -32,7 +32,7 @@ cabeza → [101 | Ana | Pendiente] → [102 | Luis | En atención] → [103 | Ro
 ------------------------------------------------------------------------------------------
 
 ## ACTIVIDAD 1 - Fundamentos y representación de listas enlazadas 
-# Actividad 1. Fundamentos y representación de listas enlazadas
+
 
 ## 1.1 Fundamentos de las listas enlazadas
 
