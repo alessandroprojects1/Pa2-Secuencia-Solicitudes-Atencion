@@ -6,7 +6,7 @@
 
 ## Integrantes: 
 
-| | Integrante | Rol | Aporte principal |
+| Integrante | Rol | Aporte principal |
 |---|---|---|
 | José Fernando Frias Díaz | Desarrollador de Recorrido e Inserción | Diseño e implementación de los algoritmos de recorrido completo e inserción (al inicio, al final y después de un nodo dado) de la Actividad 2. |
 | Alessandro Ismael Gallo Quiroz | Desarrollador de Búsqueda, Modificación y Eliminación | Diseño e implementación de los algoritmos de búsqueda por código, modificación de estado y eliminación con reajuste de enlaces, y comparación de eficiencia de la Actividad 3. |
