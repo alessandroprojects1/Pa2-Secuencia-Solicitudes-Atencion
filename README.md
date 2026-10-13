@@ -6,13 +6,14 @@
 
 ## Integrantes: 
 
-| Integrante | Rol | Aporte principal |
+| | Integrante | Rol | Aporte principal |
 |---|---|---|
-| José Fernando Frias Díaz | [Desarrollador de Módulos Matriciales] | [Desarrollo e implementación algorítmica de la Actividad 3 (Matrices y recorrido completo de datos).] |
-| Gianfranco Arturo Bernal Saravia | [Analista de Estructuras Especiales] | [Investigación y estructuración técnica de la Actividad 4 (Matrices especiales y decisión técnica).] |
-| Martha Sofia Lozano Paredes | [Gestor de Repositorio y Documentación] | [Configuración del repositorio en GitHub, diseño de la presentación ejecutiva (PPT) y redacción de conclusiones.] |
-| Yanhira Lizeth Gutiérrez Pérez | [Analista de Requisitos y Fundamentación] | [Análisis conceptual y desarrollo teórico de la Actividad 1 (Análisis del problema y selección de estructura).] |
-| Alessandro Ismael Gallo Quiroz | [Desarrollador Backend Principal] | [Modelado, desarrollo de algoritmos vectoriales y lógica de ordenamiento de la Actividad 2] |
+| José Fernando Frias Díaz | Desarrollador de Recorrido e Inserción | Diseño e implementación de los algoritmos de recorrido completo e inserción (al inicio, al final y después de un nodo dado) de la Actividad 2. |
+| Alessandro Ismael Gallo Quiroz | Desarrollador de Búsqueda, Modificación y Eliminación | Diseño e implementación de los algoritmos de búsqueda por código, modificación de estado y eliminación con reajuste de enlaces, y comparación de eficiencia de la Actividad 3. |
+| Martha Sofia Lozano Paredes | Analista de Fundamentos y Representación Gráfica | Fundamentos de listas enlazadas, clasificación y representación gráfica de la lista de 5 nodos de la Actividad 1. Además, gestión del repositorio en GitHub, presentación y conclusiones. |
+| Yanhira Lizeth Gutiérrez Pérez | Analista de Fundamentos y Representación Gráfica | Fundamentos de listas enlazadas, clasificación y representación gráfica de la lista de 5 nodos de la Actividad 1. |
+| Gianfranco Arturo Bernal Saravia | Analista de Listas Dobles y Circulares | Planteamiento, representación gráfica y justificación de las situaciones para lista doble y circular de la Actividad 4. |
+ 
 
 ## BASE COMÚN DEL PROYECTO (Alineación Grupal)
 
