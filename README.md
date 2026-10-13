@@ -382,3 +382,45 @@ Atender o retirar la solicitud más antigua (al inicio) es rápido, pero registr
 ----------------------------------------------------------------------------------
 ## ACTIVIDAD 4 - Listas dobles y circulares
 
+## 1. Lista doblemente enlazada
+
+### Situación del caso
+
+Una situación del caso en la que conviene utilizar una lista doble es durante la corrección, reubicación y gestión constante de las solicitudes de atención.
+
+Por ejemplo, cuando un operador se encuentra revisando el caso 103 (Rosa, Pendiente) y necesita consultar de forma inmediata el caso anterior, el 102 (Luis, En atención), para verificar o modificar su estado. Posteriormente, se requiere eliminar el caso 105 (Marta, Resuelto) e insertar un nuevo caso (107) justo después del 102.
+
+### Representación
+
+```text
+null ⇄ [101 | Ana | Pendiente] ⇄ [102 | Luis | En atención] ⇄ [103 | Rosa | Pendiente] ⇄ [104 | Carlos | Pendiente] ⇄ [105 | Marta | Resuelto] ⇄ null
+```
+
+### Justificación
+
+La lista doble es más adecuada porque, a cambio de un puntero adicional por nodo, ofrece una flexibilidad superior para navegar, reubicar y eliminar elementos en una secuencia con cambios constantes.
+
+---
+
+## 2. Lista circular enlazada
+
+### Situación del caso
+
+Una situación del caso en la que conviene utilizar una lista circular es en la revisión continua y rotativa de las solicitudes.
+
+Por ejemplo, un supervisor o un sistema automatizado de control necesita revisar los casos de la organización en orden secuencial (101 → 102 → 103 → 104 → 105) y, al llegar al final, volver a comenzar de forma automática con el 101, repitiendo el ciclo de manera indefinida hasta que todas las solicitudes queden totalmente resueltas.
+
+### Representación
+
+La lista circular se representa como:
+
+```text
+cabeza → 101 → 102 → 103 → 104 → 105 → 101
+```
+
+El `siguiente` del último nodo (105) apunta de nuevo al primero (101), por lo que ningún enlace es `null`.
+
+### Justificación
+
+La lista circular es más adecuada porque representa de forma natural un proceso cíclico, ideal para turnos rotativos y revisiones periódicas. En una lista simple el último nodo apunta a `null` y requiere lógica extra para reiniciar el recorrido, mientras que en la circular el flujo continúa de manera fluida sin interrupciones.
+
